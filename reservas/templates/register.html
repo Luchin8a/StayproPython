@@ -11,8 +11,8 @@
     </head>
     <body>
         <center><h1>Registro de Usuarios</h1></center>
-
-        <form action="/registro2/" method="POST">
+<font color="red">{{error}}</font>
+        <form action="/register/" method="POST">
             <!--Aquí abrimos las plantillas Jinja para usar el otro-->
             {% csrf_token %} 
             <!--Aquí llamamos al formulario de views, el as_p es para que aparezca ordenado-->
