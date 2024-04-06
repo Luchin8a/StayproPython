@@ -22,5 +22,7 @@ from reservas import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #el primer parametro es la url y el segundo desde que carpeta se llama
-    path('', views.hello)
+    path('', views.home, name="home"),
+    #la ruta de registro
+    path('registro/', views.registrar, name="registrar" )
 ]

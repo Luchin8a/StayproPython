@@ -1,6 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+#importamos una clase para hacer el registro de usuarios
+from django.contrib.auth.forms import UserCreationForm
+
 
 # Crear las vistas aquí.
-def hello(request):
-    return HttpResponse("Hola Bogotá!")
+def home(request):
+    return render(request, "home.html")
+
+def registrar(request):
+    return render(request, "register.html", {
+        #cuando llamamos form en el documento html se crea un formuario
+                  'form' : UserCreationForm
+                  })
