@@ -24,5 +24,6 @@ urlpatterns = [
     #el primer parametro es la url y el segundo desde que carpeta se llama
     path('', views.home, name="home"),
     #la ruta de registro
-    path('register/', views.registrar, name="registrar" )
+    path('register/', views.registrar, name="registrar" ),
+    path('reservas/', views.reservas, name="reservas" ),
 ]

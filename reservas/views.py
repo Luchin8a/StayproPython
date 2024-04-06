@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 #importamos una clase para hacer el registro de usuarios
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+#importamos el metodo login que crea una cookie
+from django.contrib.auth import login
+
 
 
 # Crear las vistas aquí.
@@ -22,10 +25,10 @@ def registrar(request):
                 user = User.objects.create_user(username=request.POST['username'],
                 password=request.POST['password1'])
                 user.save()
-                return render(request, "register.html", {
-              #cuando llamamos form en el documento html se crea un formuario
-                  'form' : UserCreationForm,
-                  'error' : 'Usuario registrado exitosamente'})
+                #para que login guarde el usuario en la cookie, haciendo una sesión
+                login(request, user)
+                #redirect para redirigirlo a reservas
+                return redirect('reservas')
             except:
                 return render(request, "register.html", {
             #cuando llamamos form en el documento html se crea un formuario
@@ -35,4 +38,7 @@ def registrar(request):
         #cuando llamamos form en el documento html se crea un formuario
                   'form' : UserCreationForm,
                   'error' : "Las contraseñas no coinciden"})  
+
+def reservas(request):
+    return render(request, 'reservas_habitacion.html')
     
