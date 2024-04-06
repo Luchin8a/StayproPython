@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Iniciar Sesión</h1>
+{{error}}
+ <!--Llamamos el formulario que es mandado-->
+
+<form action="/iniciarSesion/" method="POST"> 
+    <!--sirve como metodo de segurtidad, se usa en formularios POST
+    que apuntan a la misma dirección-->
+    {% csrf_token %}
+    {{form}}
+    <button> Ingresar </button>
+
+
+{% endblock  %}
+

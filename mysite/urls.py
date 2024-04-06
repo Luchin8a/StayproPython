@@ -26,4 +26,6 @@ urlpatterns = [
     #la ruta de registro
     path('register/', views.registrar, name="registrar" ),
     path('reservas/', views.reservas, name="reservas" ),
+    path('logout/', views.cerrarSesion, name='cerrarSesion'),
+    path('iniciarSesion/', views.iniciarSesion, name='iniciarSesion'),
 ]

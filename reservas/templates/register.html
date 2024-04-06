@@ -1,17 +1,9 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
+{% block content %}
+    
         <center><h1>Registro de Usuarios</h1></center>
-<font color="red">{{error}}</font>
+        <font color="red">{{error}}</font>
         <form action="/register/" method="POST">
             <!--Aquí abrimos las plantillas Jinja para usar el otro-->
             {% csrf_token %} 
@@ -21,7 +13,4 @@
                 Registrarse
             </button>
         </form>
-        
-        <script src="" async defer></script>
-    </body>
-</html>
+{% endblock %}
