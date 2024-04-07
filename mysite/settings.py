@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'staypro',
+        'NAME': 'hr',
         'USER' : 'root',
-        'PASSWORD' : '',
+        'PASSWORD' : 'mysql2023*',
         'HOST' : 'localhost',
         'PORT' : 3306
     }
