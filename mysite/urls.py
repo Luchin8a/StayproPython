@@ -22,10 +22,14 @@ from reservas import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #el primer parametro es la url y el segundo desde que carpeta se llama
-    path('', views.home, name="home"),
+    path('home/', views.home, name="home"),
+    path('', views.index, name="index"),
+    path('about/', views.about, name="about"),
+    path('contact/', views.contact, name="contact"),
     #la ruta de registro
     path('register/', views.registrar, name="registrar" ),
     path('reservas/', views.reservas, name="reservas" ),
     path('logout/', views.cerrarSesion, name='cerrarSesion'),
     path('iniciarSesion/', views.iniciarSesion, name='iniciarSesion'),
+    path('login/', views.login, name="login")
 ]

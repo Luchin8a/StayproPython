@@ -44,6 +44,18 @@ def registrar(request):
 
 def reservas(request):
     return render(request, 'reservas_habitacion.html')
+
+def index(request):
+    return render(request, 'index.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def login(request):
+    return render(request, 'dashboard\login.html')
     
 def cerrarSesion(request):
     logout(request)

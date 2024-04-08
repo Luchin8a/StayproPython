@@ -1,41 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="/reservas">Reservas</a>
-                </li>
-                <!--condicional para el cerrar sesión-->
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="/logout">Cerrar Sesión</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="/register">Registrarse</a>
-                </li>
-                <li>
-                    <a href="/iniciarSesion">Iniciar Sesión</a>
-                </li>
-                {% endif %} 
-            </ul>
-        </nav>
 
-        {%block content%}
-        {%endblock%}
-        <script src="" async defer></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="{% static 'css/mobile.css' %}">
+    <title>Hotel Catay</title>
+</head>
+
+<body>
+    
+    {%block content%}
+    {%endblock%}
+    <script src="" async defer></script>
+</body>
+
 </html>
